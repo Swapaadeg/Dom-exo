@@ -14,7 +14,7 @@ image1.setAttribute('src', 'img/zebre.jpg')
 document.body.append(image1)
 
 const image2 = document.createElement('img')
-image2.setAttribute('src', 'img/riziere.jpg')
+image2.setAttribute('src', 'img/champs.jpg')
 document.body.append(image2)
 
 const image3 = document.createElement('img')
@@ -31,7 +31,7 @@ image1.addEventListener('click', function() {
 });
 
 image2.addEventListener('click', function() {
-    mainImage.src = 'img/riziere.jpg';
+    mainImage.src = 'img/champs.jpg';
 });
 
 image3.addEventListener('click', function() {
