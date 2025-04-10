@@ -11,10 +11,9 @@ input2.style.width = '40%'
 input2.id = 'number2'
 document.body.append(input2)
 
-const paragraph = document.createElement('p')
-paragraph.id = 'result'
-paragraph.textContent = 'Résultat : '
-document.body.append(paragraph)
+const result = document.createElement('p')
+result.textContent = 'Résultat : '
+document.body.append(result)
 
 const button = document.createElement('button')
 button.textContent = 'Calculer'
