@@ -25,6 +25,5 @@ button.addEventListener('click', function() {
     paragraph.textContent = 'Je ne comprends pas'
     paragraph.style.color = 'red'
   }
-
  })
 

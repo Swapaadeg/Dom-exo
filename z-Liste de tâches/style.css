@@ -1,0 +1,20 @@
+button {
+    padding: 12px 25px;
+    margin-left: 2rem;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+input {
+    background-color: aliceblue;
+    border-radius: 10px;
+    height: 2rem;
+}

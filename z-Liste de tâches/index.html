@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de tâches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <p>Liste de tâches</p>
+        <input type="text" id="task-input" placeholder="Ajouter une tâche">
+        <button onclick="addTask()">Ajouter</button>
+
+            <p>Tâches en cours</p>
+            <ul id="task-list"></ul>
+
+        <p>Tâches complétées</p>
+        <ul id="completed-tasks"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

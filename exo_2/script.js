@@ -1,7 +1,7 @@
 const input1 = document.createElement('input')
 input1.type = 'number'
 input1.id = 'number1'
-input1.style.marginRight = '10rem'
+input1.style.marginRight = '5rem'
 input1.style.width = '40%'
 document.body.append(input1)
 
