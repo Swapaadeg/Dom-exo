@@ -6,6 +6,7 @@ button {
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -17,16 +18,4 @@ input {
     background-color: aliceblue;
     border-radius: 10px;
     height: 2rem;
-}
-
-.endBtn {
-    background-color: green;
-}
-
-.modifBtn {
-    background-color: yellow;
-}
-
-.supprBtn {
-    background-color: red;
 }

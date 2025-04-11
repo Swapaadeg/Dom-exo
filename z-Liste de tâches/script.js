@@ -1,43 +1,59 @@
 function addTask() {
-    const input = document.getElementById("task-input");
+    const input = document.getElementById('task-input');
        const taskText = input.value.trim()
 
     if (taskText !== "") {
-        const li = document.createElement('li');
-        li.textContent = taskText;
 
-        const endBtn = document.createElement('button')
-        endBtn.textContent = 'Terminé'
-        endBtn.id = 'endBtn'
-        endBtn.style.backgroundColor = 'green'
-        endBtn.onclick = function() {
+        const li = document.createElement('li');
+
+        const span = document.createElement("span");
+        span.textContent = taskText;
+
+        const terminé = document.createElement('button')
+        terminé.textContent = 'Terminé'
+        terminé.classList = 'terminé'
+        terminé.style.backgroundColor = 'green'
+        terminé.onclick = function() {
             moveToCompleted(li)
         }
 
-        const supprBtn = document.createElement('button')
-        supprBtn.textContent = 'Supprimer'
-        supprBtn.id = 'supprBtn'
-        supprBtn.style.backgroundColor = 'red'
-        endBtn.onclick = function() {
+        const supprimer = document.createElement('button')
+        supprimer.textContent = 'Supprimer'
+        supprimer.classList = 'supprimer'
+        supprimer.style.backgroundColor = 'red'
+        supprimer.onclick = function() {
             li.remove()
         }
 
-        const editBtn = document.createElement('button')
-        editBtn.textContent = 'Modifier'
-        editBtn.id = 'editBtn'
-        editBtn.style.backgroundColor = 'yellow'
-        editBtn.style.color = 'black'
-        editBtn.onclick = function() {
-            editTask(span, editBtn)
+        const modifier = document.createElement('button')
+        modifier.textContent = 'Modifier'
+        modifier.classList = 'modifier'
+        modifier.style.backgroundColor = 'yellow'
+        modifier.style.color = 'black'
+        modifier.onclick = function() {
+            editTask(span, modifier)
         }
 
-        li.appendChild(endBtn)
-        li.appendChild(supprBtn)
-        li.appendChild(editBtn)
+        li.appendChild(span)
+        li.appendChild(terminé)
+        li.appendChild(supprimer)
+        li.appendChild(modifier)
 
-        const taskList = document.getElementById("task-list");
-        taskList.appendChild(li);
-        input.value = "";
+
+        document.querySelector('.task-list').appendChild(li);
+        input.value = '';
     }
 }
+
+function moveToCompleted(li) {
+    const completedList = document.querySelector('.completed-tasks');
+    const terminé = li.querySelector('.terminé')
+    const modifier = li.querySelector('.modifier')
+
+    if (terminé) terminé.remove()
+    if (modifier) modifier.remove()
+    
+    completedList.appendChild(li)
+}
+
 
