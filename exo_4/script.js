@@ -1,5 +1,5 @@
 const input = document.createElement('input')
-input.id = 'FilterInpunt'
+input.id = 'FilterInput'
 input.placeholder = 'Filtrer les pays...'
 input.style.width = '50%'
 input.style.borderRadius = '15px'
@@ -16,24 +16,29 @@ const country = [
 
 const ul = document.getElementById('country-list');
 
+// Pour chaque pays dans le tableau "country"
 country.forEach(countryNom => {
-    const li = document.createElement('li');
-    li.textContent = countryNom; 
-    ul.append(li); 
+    const li = document.createElement('li'); //Crée un li
+    li.textContent = countryNom; //Met le nom du pays en texte
+    ul.append(li); //On ajoute li dans ul
 });
 
-function filtrerPays(filtre) {
-    ul.replaceChildren()
 
+function filtrerPays(filtre) {
+    ul.replaceChildren() //Vide la liste
+
+    //Filtre selon ce que tape l'utilisateur
     const elementsLi = country
-      .filter(p => p.toLowerCase().startsWith(filtre.toLowerCase()))
+      .filter(p => p.toLowerCase().startsWith(filtre.toLowerCase())) 
+    //Transforme chaque nom filtré en élément
       .reduce((acc, countryNom) => {
-        const li = document.createElement('li')
-        li.textContent = countryNom
-        acc.push(li)
+        const li = document.createElement('li') //Crée un li
+        li.textContent = countryNom //Met le nom du pays
+        acc.push(li) //Ajoute le li au tableau
         return acc
-      }, [])
-    elementsLi.forEach(li => ul.appendChild(li))
+      }, [])  //Départ de tableau vide
+    elementsLi.forEach(li => ul.appendChild(li)) //On ajoute tous les li au ul
   }
 
-  input.addEventListener('input', e => filtrerPays(e.target.value))
+  input.addEventListener('input', e => { filtrerPays(e.target.value) })
+  //Quand l'utilisateur tape, on filtre les pays en direct

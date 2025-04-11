@@ -8,7 +8,6 @@ mainImage.src = ''
 mainImageContainer.appendChild(mainImage)
 
 
-
 const image1 = document.createElement('img')
 image1.setAttribute('src', 'img/zebre.jpg')
 document.body.append(image1)
