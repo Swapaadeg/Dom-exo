@@ -18,3 +18,15 @@ input {
     border-radius: 10px;
     height: 2rem;
 }
+
+.endBtn {
+    background-color: green;
+}
+
+.modifBtn {
+    background-color: yellow;
+}
+
+.supprBtn {
+    background-color: red;
+}
