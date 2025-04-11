@@ -30,13 +30,7 @@ function palindrome(text) {
 //   console.log(palindrome('not a palindrome'))
 
   let tests = [
-    "eye",
-    "_eye",
-    "race car",
-    "not a palindrome",
-    "A man, a plan, a canal. Panama",
-    "nope",
-    "2A33a2"
+    'eye','_eye','race car','not a palindrome','A man, a plan, a canal. Panama','nope', 'almostomla', 'My age is 0, 0 si ega ym.', '1 eye for of 1 eye.', '0-0 (: /-\ :) 0-0', 'five|/|four'
   ];
   
   tests.forEach(word => {
