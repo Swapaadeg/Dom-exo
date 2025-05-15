@@ -1,3 +1,4 @@
+//Creation des boutons
 function createButton(text, color, onClick) {
     const btn = document.createElement('button');
     btn.textContent = text;
@@ -7,12 +8,14 @@ function createButton(text, color, onClick) {
     return btn;
 }
 
+//Ajout date
 function formatDateFR(dateStr) {
     if (!dateStr) return "";
     const [year, month, day] = dateStr.split("-");
     return `${day}/${month}/${year}`;
 }
 
+//Couleurs des dates
 function getDateColor(dateStr) {
     if (!dateStr) return 'black';
 
@@ -27,6 +30,7 @@ function getDateColor(dateStr) {
     return 'green';
 }
 
+//Ajouter une tâche
 function addTask() {
     const input = document.getElementById('task-input');
     const dateInput = document.getElementById('task-date');
@@ -68,6 +72,7 @@ function addTask() {
     saveTasks();
 }
 
+//Deplacement vers terminé
 function moveToCompleted(li) {
     li.querySelectorAll('button').forEach(btn => btn.remove());
 
@@ -78,6 +83,7 @@ function moveToCompleted(li) {
     document.querySelector('.completed-tasks').appendChild(li);
 }
 
+//Déplacement "en cours"
 function moveToInProgress(li) {
     const span = li.querySelector('span');
     li.innerHTML = '';
@@ -90,6 +96,7 @@ function moveToInProgress(li) {
     document.querySelector('.task-list').appendChild(li);
 }
 
+//Modifier une tâche
 function editTask(span, modifierBtn) {
     const errorMessage = document.getElementById('error-message');
     const input = document.createElement('input');
@@ -125,6 +132,7 @@ function editTask(span, modifierBtn) {
     };
 }
 
+//Sauvegarde des tâches
 function saveTasks() {
     const tasks = [];
 
@@ -151,6 +159,7 @@ function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// Chargement des tâches
 function loadTasks() {
     const data = JSON.parse(localStorage.getItem('tasks')) || [];
     data.forEach(task => {
