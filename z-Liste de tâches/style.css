@@ -14,8 +14,15 @@ p {
     font-weight: bold;
 }
 
+#error-message {
+    color: red;
+    margin-top: 0;
+    font-size: 1rem;
+}
 input {
-    background-color: aliceblue;
+    background-color: rgb(179, 218, 245);
     border-radius: 10px;
     height: 2rem;
+    width: 200px;
+    margin-right: 2rem;
 }
