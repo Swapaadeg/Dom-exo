@@ -13,6 +13,20 @@ function formatDateFR(dateStr) {
     return `${day}/${month}/${year}`;
 }
 
+function getDateColor(dateStr) {
+    if (!dateStr) return 'black';
+
+    const today = new Date();
+    const taskDate = new Date(dateStr);
+
+    today.setHours(0, 0, 0, 0);
+    taskDate.setHours(0, 0, 0, 0);
+
+    if (taskDate < today) return 'red';
+    if (taskDate.getTime() === today.getTime()) return 'orange';
+    return 'green';
+}
+
 function addTask() {
     const input = document.getElementById('task-input');
     const dateInput = document.getElementById('task-date');
@@ -41,7 +55,8 @@ function addTask() {
 
     const dateSpan = document.createElement('span');
     dateSpan.className = "task-date";
-    dateSpan.textContent = "    " + formatDateFR(taskDate);
+    dateSpan.textContent = " à faire pour le " + formatDateFR(taskDate);
+    dateSpan.style.color = getDateColor(taskDate);
 
     const terminé = createButton('Terminé', 'green', () => moveToCompleted(li));
     const supprimer = createButton('Supprimer', 'red', () => li.remove());
@@ -145,7 +160,9 @@ function loadTasks() {
 
         const dateSpan = document.createElement('span');
         dateSpan.className = "task-date";
-        dateSpan.textContent = "    " + (task.date || '');
+        dateSpan.textContent = " " + (task.date || '');
+        dateSpan.dataset.raw = task.date || '';
+        dateSpan.style.color = getDateColor(task.date || '');
 
         if (task.status === "pending") {
             const terminé = createButton('Terminé', 'green', () => {
